@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Astronomy Event Tracker</title>
+  <link rel="stylesheet" href="Astronomy.css" />
+</head>
+<body>
+<header><span id="typewriter"></span></header>
+
+<div class="container">
+  <h2>Welcome to the Astronomy Event Tracker</h2>
+  <p>This AI-powered assistant helps you stay informed about upcoming celestial events, best stargazing times, and space-related tips. Click the chat icon to explore the cosmos!</p>
+
+  <div class="tip"><strong>🌌 Tip:</strong> Best time to stargaze is during a new moon when the sky is darkest.</div>
+  <div class="tip"><strong>🔭 Use Case:</strong> Ask things like “When is the next meteor shower?” or “Where can I see the lunar eclipse?”</div>
+  <div class="tip"><strong>🚁 Info:</strong> This bot is trained with astronomy databases, NASA feeds, and astronomical event data.</div>
+</div>
+
+<div class="events">
+  <h2>Upcoming Celestial Events</h2>
+  <div class="event-card-container"></div>
+</div>
+
+<button class="chat-button" onclick="toggleChat()">💬</button>
+
+<div class="chat-container" id="chatContainer">
+  <div class="chat-header">
+    Celestial Assistant
+    <button class="close-chat" onclick="toggleChat()">✖</button>
+  </div>
+  <div class="chat-messages" id="messages">
+    <div class="loader" id="loader" style="display: none;"></div>
+  </div>
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Ask about celestial events..." onkeydown="handleKey(event)" />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+</body>
+<script src="Astronomy.js"></script>
+<footer>
+  <p style="text-align: center; margin-top: 20px;">&copy; 2023 Astronomy Event Tracker</p>
+</footer>
+</html>

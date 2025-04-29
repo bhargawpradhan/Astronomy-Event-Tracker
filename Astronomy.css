@@ -1,0 +1,227 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: url("Astronomy.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    animation: backgroundFade 20s ease-in-out infinite alternate;
+  }
+
+  @keyframes backgroundFade {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(1.1); }
+  }
+
+  header {
+    background: rgba(0, 0, 50, 0.8);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    animation: slideDown 1s ease;
+  }
+
+  @keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .container {
+    padding: 2rem 1.5rem;
+    max-width: 900px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
+  .chat-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(90deg, #3a0ca3, #4361ee, #4cc9f0);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50%;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: transform 0.3s ease;
+  }
+
+  .chat-button:hover {
+    transform: scale(1.1);
+  }
+
+  .chat-container {
+    position: fixed;
+    right: 30px;
+    bottom: 100px;
+    width: 580px;
+    height: 900px;
+    display: none;
+    flex-direction: column;
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    overflow: hidden;
+    z-index: 1000;
+    animation: fadeInUp 0.5s ease;
+  }
+
+  @keyframes fadeInUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .chat-header {
+    background: linear-gradient(90deg, #03045e, #0077b6, #00b4d8);
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .close-chat {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    align-self: center;
+    margin-top: 10px;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .message {
+    margin: 8px 0;
+    padding: 10px 14px;
+    border-radius: 16px;
+    max-width: 80%;
+    color: black;
+    animation: bounceIn 0.5s ease;
+  }
+
+  @keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .user-message {
+    background-color: #cce5ff;
+    align-self: flex-end;
+  }
+
+  .bot-message {
+    background-color: #eaeaea;
+    align-self: flex-start;
+  }
+
+  .chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: #f0f4f8;
+  }
+
+  .chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background-color: #e0f7fa;
+    margin-right: 8px;
+  }
+
+  .chat-input button {
+    padding: 10px 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .tip {
+    background: rgba(255,255,255,0.1);
+    border-left: 5px solid #00d4ff;
+    padding: 10px 15px;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    animation: fadeIn 1.5s ease;
+  }
+
+  .events {
+    margin-top: 3rem;
+    padding: 0 1.5rem;
+  }
+
+  .event-card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* height: 100;
+    width: 80%; */
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .event-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    overflow: hidden;
+    height: 100%;
+    width: 90%;
+    transition: transform 0.3s ease;
+    animation: fadeIn 1s ease-in;
+  }
+
+  .event-card:hover {
+    transform: translateY(-6px) scale(1.02);
+  }
+
+  .event-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .event-content {
+    padding: 1rem;
+    color: #000;
+  }
+
+  .event-content h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+  }
